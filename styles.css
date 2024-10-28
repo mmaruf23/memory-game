@@ -23,6 +23,14 @@ h1 {
   margin-bottom: 20px;
 }
 
+/* Score board */
+.score-board {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+  font-size: 1.2rem;
+}
+
 /* Grid untuk menampung kartu */
 .grid {
   display: grid;
