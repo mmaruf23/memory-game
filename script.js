@@ -1,4 +1,12 @@
 // Pilih elemen grid untuk memasukkan kartu
+
+const backgroundMusic = new Audio('music.mp3');
+backgroundMusic.loop = true; // Mengulangi musik
+backgroundMusic.play();
+
+const flipSound = new Audio('flip.mp3');
+const matchSound = new Audio('match.mp3');
+
 const grid = document.querySelector('.grid');
 
 // Daftar pasangan kartu (gunakan angka atau gambar sesuai keinginan)
@@ -79,6 +87,7 @@ let lockBoard = false;
 
 // Fungsi untuk membalik kartu
 function flipCard() {
+  flipSound.play();
   if (lockBoard) return;
   if (this === firstCard) return;
 
@@ -117,6 +126,7 @@ function checkForMatch() {
 
 // Matikan kartu jika cocok
 function disableCards() {
+  matchSound.play();
   firstCard.removeEventListener('click', flipCard);
   secondCard.removeEventListener('click', flipCard);
   resetBoard();
@@ -140,3 +150,4 @@ function resetBoard() {
 
 // Mulai permainan
 initGame();
+
